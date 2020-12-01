@@ -132,11 +132,11 @@ public class Comparator {
     }
 
     private boolean compareImagesWithAllowableDifference(final byte[] firstImageHash, final byte[] secondImageHash) {
-        int allowableAmountOfBadPixels = (int) ((firstImageHash.length / 100f) * percentageOfAllowableDifference) + 1;
+        int allowableAmountOfBadPixels = (int) ((firstImageHash.length / 100f) * percentageOfAllowableDifference);
         int n = firstImageHash.length;
         while (n-- != 0) {
             if (firstImageHash[n] != secondImageHash[n]) {
-                if (0 == --allowableAmountOfBadPixels) {
+                if (-1 == --allowableAmountOfBadPixels) {
                     return false;
                 }
             }
