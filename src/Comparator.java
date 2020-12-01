@@ -25,6 +25,20 @@ public class Comparator {
         this.sideOfCompressedSquaredImage = sideOfCompressedSquaredImage;
     }
 
+    public int getSideOfCompressedSquaredImage() {
+        return sideOfCompressedSquaredImage;
+    }
+
+    public int getColorsPerPixel() {
+        return colorsPerPixel;
+    }
+    public int getColorsPerChannel() {
+        return colorsPerChannel;
+    }
+    public int getChannelDivision() {
+        return channelDivision;
+    }
+
     /**
      * Set the number of possible colors additive primitive color after simplification
      * @param hashDetailing
@@ -118,7 +132,7 @@ public class Comparator {
     }
 
     private boolean compareImagesWithAllowableDifference(final byte[] firstImageHash, final byte[] secondImageHash) {
-        int allowableAmountOfBadPixels = (int) ((firstImageHash.length / 100f) * percentageOfAllowableDifference);
+        int allowableAmountOfBadPixels = (int) ((firstImageHash.length / 100f) * percentageOfAllowableDifference) + 1;
         int n = firstImageHash.length;
         while (n-- != 0) {
             if (firstImageHash[n] != secondImageHash[n]) {
