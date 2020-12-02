@@ -19,14 +19,18 @@ https://mihanentalpo.me/2016/08/php-%D1%85%D1%8D%D1%88-%D0%B8%D0%B7%D0%BE%D0%B1%
 
 **Usage example:**
 
-'Comparator comp = new Comparator(hashDetailing, sideOfCompressedSquaredImage, percentageOfAllowableDifference);'
-'boolean result = comp.compareImages(new File("firstImagePath"), new File("firstImagePath"));'
+```java
+Comparator comp = new Comparator(hashDetailing, sideOfCompressedSquaredImage, percentageOfAllowableDifference);
+boolean result = comp.compareImages(new File("firstImagePath"), new File("firstImagePath"));
+```
 
-'Comparator comp = new Comparator();' // default values are: hashDetailing = HASH_DETAILING_3, sideOfCompressedSquaredImage = 10, percentageOfAllowableDifference = 0
-'comp.setHashDetailing(HASH_DETAILING_6);'
-'comp.setPercentageOfAllowableDifference(10);' // different pixels percentage
-'comp.setSideOfCompressedSquaredImage(20);'
-'boolean result = comp.compareImages(bufferedFirstImage, bufferedSecondImage);'
+```java
+Comparator comp = new Comparator(); // default values are: hashDetailing = HASH_DETAILING_3, sideOfCompressedSquaredImage = 10, percentageOfAllowableDifference = 0
+comp.setHashDetailing(HASH_DETAILING_6);
+comp.setPercentageOfAllowableDifference(10); // different pixels percentage
+comp.setSideOfCompressedSquaredImage(20);
+boolean result = comp.compareImages(bufferedFirstImage, bufferedSecondImage);
+```
 
 To see more samples of usage visit wiki:
 https://github.com/AvadoAvakado/FastIC/wiki/FastIC-samples
